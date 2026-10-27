@@ -149,3 +149,5 @@ td:first-child{font-weight:700;white-space:nowrap}
 .notfound{padding-top:40px;padding-bottom:60px}
 .notfound h1{font-weight:800;font-variation-settings:"wdth" 68;font-size:clamp(42px,8vw,84px);line-height:.98;margin:0 0 18px;max-width:14ch}
 .notfound p{max-width:46ch;color:var(--ink-2);margin:0 0 24px}
+
+.kicker{margin:0 0 14px;font-weight:700;font-variation-settings:"wdth" 80;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
