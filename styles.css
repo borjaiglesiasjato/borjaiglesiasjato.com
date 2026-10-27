@@ -114,3 +114,18 @@ td:first-child{font-weight:700;white-space:nowrap}
 .checklist li{padding:10px 0 10px 34px;border-bottom:1px solid var(--line);position:relative}
 .checklist li::before{content:"";position:absolute;left:0;top:13px;width:18px;height:18px;border:2px solid var(--ink);border-radius:4px}
 .end-cta{margin:40px 0 10px}
+
+/* sesión: dos opciones con precio */
+.plans{list-style:none;padding:0;margin:26px 0 22px;border-top:1px solid rgba(255,255,255,.28)}
+.session .plans{padding-left:0}
+.plans li{display:grid;grid-template-columns:1fr auto;gap:14px 32px;align-items:center;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.plans h3{color:#fff;font-variation-settings:"wdth" 85}
+.plans p{margin:0;font-size:16px}
+.plans .buy{display:flex;align-items:center;gap:18px;justify-content:flex-end}
+.plans .price{font-variation-settings:"wdth" 68;font-weight:800;font-size:34px;line-height:1;color:#fff;white-space:nowrap}
+.session .fine{font-size:14.5px;margin:0}
+.session .fine a{color:#fff}
+@media (max-width:640px){
+  .plans li{grid-template-columns:1fr}
+  .plans .buy{justify-content:space-between}
+}
