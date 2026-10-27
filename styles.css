@@ -75,6 +75,7 @@ h3{font-weight:700;font-size:20px;line-height:1.25;margin:0 0 6px}
 .g-cover-link{grid-area:cover;display:block}
 .g-head{grid-area:head;display:block;color:var(--ink);text-decoration:none}
 .g-more{grid-area:more}
+.g-more > .btn{display:flex;justify-content:center;width:100%}
 .g-meta{display:block;font-weight:700;font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px}
 .guides h3{font-weight:800;font-variation-settings:"wdth" 70;font-size:clamp(24px,4vw,44px);line-height:1;margin:0;max-width:17ch}
 .g-toggle{border-top:1px solid var(--line);margin:0 0 20px}
