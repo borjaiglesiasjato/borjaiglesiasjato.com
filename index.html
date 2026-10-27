@@ -22,7 +22,7 @@
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/archivo.woff" as="font" type="font/woff" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=20261027b">
+<link rel="stylesheet" href="/styles.css?v=20261027c">
 </head>
 <body>
 <header class="wrap top">
@@ -101,5 +101,16 @@
 <footer>
   <div class="wrap"><span>© 2026 Borja Iglesias</span><a href="https://www.instagram.com/borjaiglesiasjato/">@borjaiglesiasjato</a></div>
 </footer>
+<script>
+/* Ajusta la portada de cada guía al alto del título (solo móvil/tablet) */
+(function(){var mq=matchMedia('(max-width:820px)');
+function fit(){document.querySelectorAll('.guides > li').forEach(function(li){
+  var h=li.querySelector('.g-head');if(!h)return;
+  if(!mq.matches){li.style.removeProperty('--cov');return}
+  li.style.setProperty('--cov','76px');
+  for(var i=0;i<3;i++){var w=Math.min(92,Math.round(h.offsetHeight*640/905));li.style.setProperty('--cov',w+'px')}
+})}
+fit();addEventListener('resize',fit);if(document.fonts)document.fonts.ready.then(fit);})();
+</script>
 </body>
 </html>
