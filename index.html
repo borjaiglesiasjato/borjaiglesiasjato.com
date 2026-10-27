@@ -22,7 +22,7 @@
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/archivo.woff" as="font" type="font/woff" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=20261027c">
+<link rel="stylesheet" href="/styles.css?v=20261027d">
 </head>
 <body>
 <header class="wrap top">
@@ -108,7 +108,7 @@ function fit(){document.querySelectorAll('.guides > li').forEach(function(li){
   var h=li.querySelector('.g-head');if(!h)return;
   if(!mq.matches){li.style.removeProperty('--cov');return}
   li.style.setProperty('--cov','76px');
-  for(var i=0;i<3;i++){var w=Math.min(92,Math.round(h.offsetHeight*640/905));li.style.setProperty('--cov',w+'px')}
+  for(var i=0;i<3;i++){var w=Math.min(innerWidth<480?92:120,Math.round(h.offsetHeight*640/905));li.style.setProperty('--cov',w+'px')}
 })}
 fit();addEventListener('resize',fit);if(document.fonts)document.fonts.ready.then(fit);})();
 </script>
