@@ -165,3 +165,33 @@ td:first-child{font-weight:700;white-space:nowrap}
 .notfound p{max-width:46ch;color:var(--ink-2);margin:0 0 24px}
 
 .kicker{margin:0 0 14px;font-weight:700;font-variation-settings:"wdth" 80;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+
+/* guía: desbloqueo con email */
+html.gated .locked{display:none}
+.gate{display:none}
+html.gated .gate{display:block;position:relative;margin:30px 0 10px;background:var(--ink);color:#fff;border-radius:22px;padding:34px clamp(20px,5vw,44px) 30px}
+html.gated .gate::before{content:"";position:absolute;left:0;right:0;top:-120px;height:110px;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(255,255,255,0),#fff)}
+.gate .kicker{color:var(--gold);margin-bottom:10px}
+.gate h2{color:#fff;margin:0 0 12px}
+.gate > p{color:#c8d2e1;max-width:52ch;font-size:17px;margin:0 0 20px}
+.gate .gate-legal{font-size:13px;line-height:1.5;color:#9fb0c7;margin:16px 0 0}
+.gate .gate-legal a{color:#fff}
+/* formulario de Kajabi restilado */
+.gate #kajabi-form,.gate .kajabi-form__content{all:unset;display:block}
+.gate .kajabi-form__title,.gate .kajabi-form__subtitle{display:none!important}
+.gate fieldset{border:0;padding:0;margin:0;display:grid;gap:12px}
+.gate .kajabi-form__form-item{margin:0!important;padding:0!important}
+.gate input[type=text],.gate input[type=email]{width:100%;font:inherit;font-size:17px;padding:15px 16px;border-radius:12px;border:1.5px solid #3d4b63;
+  background:#fff;color:var(--ink);box-shadow:none;height:auto;line-height:1.3}
+.gate input[type=text]:focus,.gate input[type=email]:focus{outline:3px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+.gate .checkbox-field label{display:flex!important;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:#e6ecf4;cursor:pointer;position:static!important;padding:0!important}
+.gate .checkbox-field input[type=checkbox]{appearance:auto;-webkit-appearance:checkbox;position:static!important;opacity:1!important;width:20px;height:20px;margin:2px 0 0;flex:none;accent-color:var(--red)}
+.gate .checkbox-field .overlay{display:none!important}
+.gate .checkbox-field .text{position:static!important;padding:0!important;color:#e6ecf4!important;font:inherit!important}
+.gate .kajabi-form__btn{all:unset;box-sizing:border-box;display:inline-flex;justify-content:center;align-items:center;background:var(--red);color:#fff;font-family:"Archivo",system-ui,sans-serif;
+  font-weight:700;font-size:17px;padding:16px 26px;border-radius:999px;cursor:pointer;margin-top:4px}
+.gate .kajabi-form__btn:hover{background:#a50d26}
+.gate .kajabi-form__btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.gate .parsley-errors-list{list-style:none;padding:0;margin:6px 0 0;color:#ffb4b4;font-size:14px}
+@media (min-width:640px){.gate .kajabi-form__btn{justify-self:start}}
