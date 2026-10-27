@@ -189,7 +189,7 @@ html.gated .gate::before{content:"";position:absolute;left:0;right:0;top:-120px;
 #gate .checkbox-field label{display:flex!important;gap:12px!important;align-items:flex-start!important;margin:4px 0 0!important;padding:0!important;position:static!important;cursor:pointer}
 #gate .checkbox-field input[type=checkbox]{appearance:auto!important;-webkit-appearance:checkbox!important;position:static!important;opacity:1!important;display:block!important;
   width:20px!important;height:20px!important;min-width:20px;margin:2px 0 0!important;padding:0!important;accent-color:#c8102e;border-radius:4px!important}
-#gate .checkbox-field .overlay{display:none!important}
+#gate .checkbox-field .overlay,#gate .checkbox-field label::before,#gate .checkbox-field label::after{display:none!important}
 #gate .checkbox-field .text{position:static!important;padding:0!important;margin:0!important;color:#e6ecf4!important;font-family:"Archivo",system-ui,sans-serif!important;font-size:14.5px!important;line-height:1.45!important;font-weight:400!important}
 #gate .kajabi-form__btn{display:inline-flex!important;justify-content:center;align-items:center;width:100%!important;background:#c8102e!important;color:#fff!important;border:0!important;
   font-family:"Archivo",system-ui,sans-serif!important;font-weight:700!important;font-size:17px!important;padding:17px 28px!important;border-radius:999px!important;cursor:pointer;margin:8px 0 0!important;height:auto!important;line-height:1.2!important;box-shadow:none!important;text-transform:none!important;letter-spacing:0!important}
@@ -197,3 +197,7 @@ html.gated .gate::before{content:"";position:absolute;left:0;right:0;top:-120px;
 #gate .kajabi-form__btn:focus-visible{outline:3px solid #d9a23a!important;outline-offset:3px}
 #gate .parsley-errors-list{list-style:none;padding:0;margin:6px 0 0;color:#ffb4b4;font-size:14px}
 @media (min-width:640px){#gate .kajabi-form__btn{width:auto!important}}
+.foot-links{display:flex;gap:18px}
+.legal{padding-top:30px}
+.legal h1{font-weight:800;font-variation-settings:"wdth" 70;font-size:clamp(36px,6vw,60px);line-height:1;margin:0 0 10px}
+.legal h2{font-size:clamp(22px,3vw,28px);margin:32px 0 10px}
