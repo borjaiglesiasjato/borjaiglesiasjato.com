@@ -1,7 +1,8 @@
 /* borjaiglesiasjato.com — hoja de estilos compartida
    Idea: la travesía España → Estados Unidos. Tinta azul atlántico, papel blanco frío,
    rojo de bandera solo para la acción principal. Una sola familia (Archivo) jugando con el ancho. */
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap");
+@font-face{font-family:"Archivo";src:url("/fonts/archivo.woff") format("woff");
+  font-weight:400 800;font-stretch:62% 100%;font-display:swap}
 
 :root{
   --ink:#13213a;        /* azul atlántico */
@@ -39,11 +40,18 @@ a:hover{color:var(--red)}
 .btn.ghost:hover{background:var(--ink);color:#fff}
 
 /* hero */
-.hero{padding-top:56px;padding-bottom:40px}
+.hero{padding-top:40px;padding-bottom:32px;display:grid;grid-template-columns:1fr;gap:28px}
 .hero h1{margin:0;font-weight:800;font-variation-settings:"wdth" 68;line-height:.95;
-  font-size:clamp(46px,9.5vw,112px);letter-spacing:-.01em;max-width:14ch}
-.hero p.lede{font-size:clamp(18px,2.2vw,21px);color:var(--ink-2);max-width:46ch;margin:26px 0 30px}
-.route{margin:46px 0 0;color:var(--ink-2)}
+  font-size:clamp(46px,9.5vw,104px);letter-spacing:-.01em;max-width:14ch}
+.hero p.lede{font-size:clamp(19px,2.2vw,22px);line-height:1.45;max-width:40ch;margin:22px 0 12px;font-weight:500}
+.hero p.origin{color:var(--ink-2);max-width:46ch;margin:0 0 26px}
+.portrait{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 22%;border-radius:18px;background:var(--mist);height:auto}
+@media (min-width:821px){
+  .hero{grid-template-columns:minmax(0,1fr) 400px;gap:56px;align-items:end;padding-top:56px}
+  .portrait{aspect-ratio:4/5;object-position:center}
+  .hero .route{grid-column:1/-1}
+}
+.route{margin:8px 0 0;color:var(--ink-2)}
 .route svg{width:100%;height:auto}
 .route .places{display:flex;justify-content:space-between;font-variation-settings:"wdth" 80;font-weight:600;font-size:14px;margin-top:6px}
 .route .places span:last-child{text-align:right}
@@ -73,8 +81,10 @@ h3{font-weight:700;font-size:20px;line-height:1.25;margin:0 0 6px}
   border-bottom:1px solid var(--line);text-decoration:none}
 .guides li a:hover h3{color:var(--red)}
 .guides p{margin:0;color:var(--ink-2);font-size:15.5px;max-width:60ch}
-.guides .go{font-weight:700;font-size:15px;white-space:nowrap}
+.guides .go{font-weight:700;font-size:16px;white-space:nowrap;color:var(--red)}
+.intro{max-width:60ch;margin:0}
 .guides .soon h3{color:var(--ink-2)}
+.guides li a:hover .go{text-decoration:underline}
 
 /* sesión */
 .session{background:var(--ink);color:#fff;border-radius:22px;padding:40px clamp(22px,5vw,56px);margin:0 auto}
@@ -129,3 +139,13 @@ td:first-child{font-weight:700;white-space:nowrap}
   .plans li{grid-template-columns:1fr}
   .plans .buy{justify-content:space-between}
 }
+
+/* aviso intermedio en guías */
+.mid-cta{border-top:1.5px solid var(--ink);border-bottom:1px solid var(--line);padding:18px 0;margin:34px 0 0;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.mid-cta p{margin:0;font-size:17.5px}
+.mid-cta a{font-weight:700;color:var(--red)}
+
+/* 404 */
+.notfound{padding-top:40px;padding-bottom:60px}
+.notfound h1{font-weight:800;font-variation-settings:"wdth" 68;font-size:clamp(42px,8vw,84px);line-height:.98;margin:0 0 18px;max-width:14ch}
+.notfound p{max-width:46ch;color:var(--ink-2);margin:0 0 24px}
