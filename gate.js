@@ -5,11 +5,13 @@
   var guia=document.body.getAttribute('data-guia')||location.pathname;
   function set(n,v){var el=form.querySelector('[name="form_submission['+n+']"]');if(el)el.value=v;return el}
   var g=set('custom_19',guia); if(g&&g.parentNode) g.parentNode.style.display='none';
-  var nm=null;
+  var nm=form.querySelector('[name="form_submission[name]"]'); if(nm){nm.placeholder='Tu nombre';nm.autocomplete='given-name';nm.setAttribute('aria-label','Tu nombre')}
   var em=form.querySelector('[name="form_submission[email]"]'); if(em){em.placeholder='tu@email.com';em.autocomplete='email';em.setAttribute('inputmode','email');em.setAttribute('aria-label','Tu email')}
   var sink=document.createElement('iframe'); sink.name='bi_sink'; sink.title='Envío'; sink.hidden=true; sink.setAttribute('aria-hidden','true');
   document.body.appendChild(sink); form.target='bi_sink';
   function unlock(){try{localStorage.setItem(KEY,'1')}catch(e){}
+    var n=nm&&nm.value.trim().split(/\s+/)[0]; var r0=document.getElementById('resto');
+    if(n&&r0){var p=document.createElement('p');p.className='gate-thanks';p.textContent='Gracias, '+n+'. Aquí sigue tu guía.';r0.insertBefore(p,r0.firstChild)}
     document.documentElement.classList.remove('gated');
     var r=document.getElementById('resto'); if(r){r.setAttribute('tabindex','-1');r.focus({preventScroll:true});}}
   var done=false; function fin(){if(done)return;done=true;unlock()}
@@ -21,6 +23,6 @@
   /* Enlaces del índice a partes bloqueadas: llevan al formulario */
   document.querySelectorAll('.toc a').forEach(function(a){a.addEventListener('click',function(e){
     if(!document.documentElement.classList.contains('gated'))return;
-    var t=document.querySelector(a.getAttribute('href')); if(t&&t.closest('#resto')){e.preventDefault();gate.scrollIntoView({behavior:'smooth',block:'center'});if(em)em.focus({preventScroll:true})}
+    var t=document.querySelector(a.getAttribute('href')); if(t&&t.closest('#resto')){e.preventDefault();gate.scrollIntoView({behavior:'smooth',block:'center'});var f=nm||em;if(f)f.focus({preventScroll:true})}
   })});
 })();
