@@ -13,7 +13,7 @@
     var n=nm&&nm.value.trim().split(/\s+/)[0]; var r0=document.getElementById('resto');
     if(n&&r0){var p=document.createElement('p');p.className='gate-thanks';p.textContent='Gracias, '+n+'. Aquí sigue tu guía.';r0.insertBefore(p,r0.firstChild)}
     document.documentElement.classList.remove('gated');
-    var r=document.getElementById('resto'); if(r){r.setAttribute('tabindex','-1');r.focus({preventScroll:true});}}
+    var r=document.getElementById('resto'); if(r){r.setAttribute('tabindex','-1');r.focus({preventScroll:true});r.scrollIntoView({behavior:'smooth',block:'start'});}}
   var done=false; function fin(){if(done)return;done=true;unlock()}
   form.addEventListener('submit',function(){
     if(form.checkValidity&&!form.checkValidity()) return;
